@@ -6,9 +6,6 @@ const benchmark = require('benchmark');
 const cliff = require('cliff');
 const fs = require('fs');
 const join = require('path').join;
-const suits = {
-  renderToString: require('./renderToString')
-};
 const versions = JSON.parse(fs.readFileSync(join(
   __dirname, 'package.json'
 ), 'utf8'
@@ -16,18 +13,21 @@ const versions = JSON.parse(fs.readFileSync(join(
 
 let results;
 
-// teleport({
-//   libName: 'example2',
-//   techs: ['bemhtml.js'],
-//   platforms: ['desktop'],
-//   entities: ['templates'],
-//   levels: {
-//     desktop: [{
-//       path: join('renderToString', 'react-xjst')
-//     }]
-//   },
-//   exportPath: join('renderToString', 'react-xjst', 'assets')
-// }).then(() => {
+teleport({
+  libName: 'example',
+  techs: ['bemhtml.js'],
+  platforms: ['desktop'],
+  entities: ['templates'],
+  levels: {
+    desktop: [{
+      path: join('renderToString', 'react-xjst')
+    }]
+  },
+  exportPath: join('renderToString', 'react-xjst', 'assets')
+}).then(() => {
+  const suits = {
+    renderToString: require('./renderToString')
+  };
   Object.keys(suits).forEach(suitName => {
     const suite = new benchmark.Suite(
       suitName,
@@ -75,4 +75,4 @@ let results;
 
     suite.run();
   });
-// });
+});
