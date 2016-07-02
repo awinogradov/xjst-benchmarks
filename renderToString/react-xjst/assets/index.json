@@ -1,0 +1,13 @@
+{
+  "bemhtml.js": {
+    "templates": [
+      "renderToString/react-xjst/templates/templates.bemhtml.js"
+    ]
+  },
+  "combined": {
+    "bemhtml.js": [
+      "renderToString/react-xjst/templates/templates.bemhtml.js"
+    ],
+    "ddsl.js": "renderToString/react-xjst/assets/example.ddsl.js"
+  }
+}

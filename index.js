@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 const teleport = require('tlprt');
 
@@ -10,24 +10,24 @@ const suits = {
   renderToString: require('./renderToString')
 };
 const versions = JSON.parse(fs.readFileSync(join(
-  __dirname, 'package.json'),
-  'utf8'
+  __dirname, 'package.json'
+), 'utf8'
 )).dependencies;
 
 let results;
 
-// teleport({
-//     libName: 'example',
-//     techs: ['bemhtml.js'],
-//     platforms: ['desktop'],
-//     entities: ['templates'],
-//     levels: {
-//       desktop: [{
-//         path: join(process.cwd(), 'renderToString', 'react-xjst')
-//       }]
-//     },
-//     exportPath: join(process.cwd(), 'renderToString', 'react-xjst', 'assets')
-// }).then(() => {
+teleport({
+  libName: 'example',
+  techs: ['bemhtml.js'],
+  platforms: ['desktop'],
+  entities: ['templates'],
+  levels: {
+    desktop: [{
+      path: join('renderToString', 'react-xjst')
+    }]
+  },
+  exportPath: join('renderToString', 'react-xjst', 'assets')
+}).then(() => {
   Object.keys(suits).forEach(suitName => {
     const suite = new benchmark.Suite(
       suitName,
@@ -75,4 +75,4 @@ let results;
 
     suite.run();
   });
-// });
+});

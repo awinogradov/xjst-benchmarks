@@ -2008,78 +2008,77 @@ var api = new DDSL({"engine":"DDSL","exportName":"DDSL"});
 /// ------ BEM-XJST User-code Start -----
 /// -------------------------------------
 api.compile(function(match, once, wrap, block, elem, mode, mod, elemMod, def, tag, attrs, cls, js, bem, mix, content, replace, extend, oninit, xjstOptions, local, applyCtx, applyNext, apply) {
-  block('header')(
-    content()(function () {
-      'use strict';
+block('header')(
+  content()(function () {
+    'use strict';
 
-      const childrenNum = this.ctx.childrenNum;
-      const children = [];
-      let i = 0;
+    const childrenNum = this.ctx.childrenNum;
+    const children = [];
+    let i = 0;
 
-      while(i < childrenNum) {
-        children.push({
-          elem: 'child',
-          attrs: { id: `header-${i++}` }
-        });
-      }
+    while(i < childrenNum) {
+      children.push({
+        elem: 'child',
+        attrs: { id: `header-${i++}` }
+      });
+    }
 
-      return children;
-    })
-  );
+    return children;
+  })
+);
 
-  block('content')(
-    content()(function () {
-      'use strict';
+block('content')(
+  content()(function () {
+    'use strict';
 
-      const childrenNum = this.ctx.childrenNum;
-      const children = [];
-      let i = 0;
+    const childrenNum = this.ctx.childrenNum;
+    const children = [];
+    let i = 0;
 
-      while(i < childrenNum) {
-        children.push({
-          tag: 'b',
-          content: `bold-${i}`
-        }, {
-          tag: 'i',
-          content: `italic-${i++}`
-        }, {
+    while(i < childrenNum) {
+      children.push({
+        tag: 'b',
+        content: `bold-${i}`
+      }, {
+        tag: 'i',
+        content: `italic-${i++}`
+      }, {
+        block: 'undeclared',
+        content: {
           block: 'undeclared',
           content: {
             block: 'undeclared',
             content: {
               block: 'undeclared',
-              content: {
-                block: 'undeclared',
-                content: 'div'
-              }
+              content: 'div'
             }
           }
-        });
-      }
+        }
+      });
+    }
 
-      return children;
-    })
-  );
+    return children;
+  })
+);
 
-  block('footer')(
-    content()(function () {
-      'use strict';
+block('footer')(
+  content()(function () {
+    'use strict';
 
-      const childrenNum = this.ctx.childrenNum;
-      const children = [];
-      let i = 0;
+    const childrenNum = this.ctx.childrenNum;
+    const children = [];
+    let i = 0;
 
-      while(i < childrenNum) {
-        children.push({
-          elem: 'child',
-          attrs: { id: `footer-${i++}` }
-        });
-      }
+    while(i < childrenNum) {
+      children.push({
+        elem: 'child',
+        attrs: { id: `footer-${i++}` }
+      });
+    }
 
-      return children;
-    })
-  );
-
+    return children;
+  })
+);
 ;
 });
 api.exportApply(exports);

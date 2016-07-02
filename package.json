@@ -5,7 +5,8 @@
     "cliff": "0.1.10",
     "react": "15.1.0",
     "react-dom": "15.1.0",
-    "react-xjst": "0.1.0",
+    "react-xjst": "awinogradov/react-xjst#feature/fast",
+    "tlprt": "0.1.0",
     "vidom": "0.3.3",
     "xjst-ddsl": "0.0.4"
   },
