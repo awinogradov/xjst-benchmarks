@@ -16,18 +16,18 @@ const versions = JSON.parse(fs.readFileSync(join(
 
 let results;
 
-teleport({
-  libName: 'example',
-  techs: ['bemhtml.js'],
-  platforms: ['desktop'],
-  entities: ['templates'],
-  levels: {
-    desktop: [{
-      path: join('renderToString', 'react-xjst')
-    }]
-  },
-  exportPath: join('renderToString', 'react-xjst', 'assets')
-}).then(() => {
+// teleport({
+//   libName: 'example2',
+//   techs: ['bemhtml.js'],
+//   platforms: ['desktop'],
+//   entities: ['templates'],
+//   levels: {
+//     desktop: [{
+//       path: join('renderToString', 'react-xjst')
+//     }]
+//   },
+//   exportPath: join('renderToString', 'react-xjst', 'assets')
+// }).then(() => {
   Object.keys(suits).forEach(suitName => {
     const suite = new benchmark.Suite(
       suitName,
@@ -48,7 +48,7 @@ teleport({
 
     Object.keys(test).forEach(testName => {
       let i = 0;
-      let name = `  ${testName} v${versions[testName]} `;
+      let name = `  ${testName} `;
 
       suite.add(
         testName,
@@ -75,4 +75,4 @@ teleport({
 
     suite.run();
   });
-});
+// });

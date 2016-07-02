@@ -12,7 +12,6 @@ const templates = fs.readFileSync(join(
 module.exports = {
   'react': require('./react')(CHILDREN_NUM),
   'react-xjst': require('./react-xjst')(CHILDREN_NUM),
-  // 'bem-xjst': require('./bem-xjst')(CHILDREN_NUM, templates),
-  // 'xjst-ddsl': require('./xjst-ddsl')(CHILDREN_NUM, templates)
-  // 'vidom' : require('./vidom')(CHILDREN_NUM)
+  'bem-xjst': require('./bem-xjst')(CHILDREN_NUM, templates),
+  'xjst-ddsl': require('./xjst-ddsl')(CHILDREN_NUM, templates)
 };
