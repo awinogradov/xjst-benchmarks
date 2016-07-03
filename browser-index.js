@@ -16,7 +16,12 @@ Object.keys(suits).forEach(suitName => {
       },
 
       onComplete() {
-        console.log(results);
+        results.sort((resultA, resultB) => resultA.mean - resultB.mean).forEach((res) => {
+          console.log(res['']);
+          console.log('mean time: ', res['mean time']);
+          console.log('ops/sec: ', res['ops/sec']);
+          console.log('===');
+        });
       }
     });
   const test = suits[suitName];
