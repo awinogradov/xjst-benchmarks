@@ -3,14 +3,17 @@
     "bem-xjst": "7.0.0",
     "benchmark": "2.1.0",
     "cliff": "0.1.10",
+    "raw-loader": "^0.5.1",
     "react": "15.1.0",
     "react-dom": "15.1.0",
     "react-xjst": "awinogradov/react-xjst#feature/fast",
     "tlprt": "0.1.0",
     "vidom": "0.3.3",
+    "webpack": "^1.13.1",
     "xjst-ddsl": "0.0.4"
   },
   "scripts": {
-    "start": "NODE_ENV=production node index.js"
+    "start": "NODE_ENV=production node index.js",
+    "browser-build": "webpack ./browser-index.js ./static/bundle.js"
   }
 }
