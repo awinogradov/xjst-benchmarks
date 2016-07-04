@@ -2,7 +2,7 @@
 
 const React = require('react');
 const ReactDom = require('react-dom');
-const App = require('../lib/react/app');
+const App = require('../lib/react-xjst/app');
 
 module.exports = childrenNum => (deferred) => ReactDom.render(
   React.createElement(App, { childrenNum }),

@@ -1,5 +1,10 @@
 # xjst-benchmarks
 
+__Build assets (ddsl templates)__
+```
+npm run build-assets
+```
+
 ## node
 
 ```

@@ -14,6 +14,7 @@
   },
   "scripts": {
     "start": "NODE_ENV=production node index.js",
+    "build-assets": "node build-assets.js",
     "browser-build": "webpack ./browser-index.js ./static/bundle.js"
   }
 }

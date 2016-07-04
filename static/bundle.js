@@ -19740,7 +19740,7 @@
 
 	module.exports = {
 	  'react': __webpack_require__(163)(CHILDREN_NUM),
-	  'react-xjst': __webpack_require__(170)(CHILDREN_NUM)
+	  'react-xjst': __webpack_require__(171)(CHILDREN_NUM)
 	};
 
 
@@ -19752,77 +19752,7 @@
 
 	const React = __webpack_require__(164);
 	const ReactDom = __webpack_require__(1);
-
-	class App extends React.Component {
-	  render() {
-	    const childrenNum = this.props.childrenNum;
-	    return React.createElement('div', { className: 'app' }, [
-	      React.createElement(Header, { childrenNum }),
-	      React.createElement(Content, { childrenNum }),
-	      React.createElement(Footer, { childrenNum })
-	    ]);
-	  }
-	}
-
-	class Header extends React.Component {
-	  render() {
-	    const childrenNum = this.props.childrenNum;
-	    const children = [];
-	    let i = 0;
-
-	    while(i < childrenNum) {
-	      children.push(React.createElement('div', {
-	        className: 'header__child',
-	        id: `header-${i++}`
-	      }));
-	    }
-
-	    return React.createElement('div', { className: 'header' }, children);
-	  }
-	}
-
-	class Content extends React.Component {
-	  render() {
-	    const childrenNum = this.props.childrenNum;
-	    const children = [];
-	    let i = 0;
-
-	    while(i < childrenNum) {
-	      children.push(
-	        React.createElement('b', null, `bold-${i}`),
-	        React.createElement('i', null, `italic-${i++}`),
-	        React.createElement(
-	          'div',
-	          { className: 'undeclared' },
-	          React.createElement(
-	            'div',
-	            { className: 'undeclared' },
-	            React.createElement(
-	              'div',
-	              { className: 'undeclared' },
-	              React.createElement(
-	                'div',
-	                { className: 'undeclared' },
-	                'div')))));
-	    }
-
-	    return React.createElement('div', { className: 'content' }, children);
-	  }
-	}
-
-	class Footer extends React.Component {
-	  render() {
-	    const childrenNum = this.props.childrenNum;
-	    const children = [];
-	    let i = 0;
-
-	    while(i < childrenNum) {
-	      children.push(React.createElement('div', { id: `footer-${i++}` }));
-	    }
-
-	    return React.createElement('div', { className : 'footer' }, children);
-	  }
-	}
+	const App = __webpack_require__(170);
 
 	module.exports = childrenNum => (deferred) => ReactDom.render(
 	  React.createElement(App, { childrenNum }),
@@ -20506,8 +20436,106 @@
 	'use strict';
 
 	const React = __webpack_require__(164);
+
+	class App extends React.Component {
+	  render() {
+	    const childrenNum = this.props.childrenNum;
+	    return React.createElement('div', { className: 'app' }, [
+	      React.createElement(Header, { childrenNum }),
+	      React.createElement(Content, { childrenNum }),
+	      React.createElement(Footer, { childrenNum })
+	    ]);
+	  }
+	}
+
+	class Header extends React.Component {
+	  render() {
+	    const childrenNum = this.props.childrenNum;
+	    const children = [];
+	    let i = 0;
+
+	    while(i < childrenNum) {
+	      children.push(React.createElement('div', {
+	        className: 'header__child',
+	        id: `header-${i++}`
+	      }));
+	    }
+
+	    return React.createElement('div', { className: 'header' }, children);
+	  }
+	}
+
+	class Content extends React.Component {
+	  render() {
+	    const childrenNum = this.props.childrenNum;
+	    const children = [];
+	    let i = 0;
+
+	    while(i < childrenNum) {
+	      children.push(
+	        React.createElement('b', null, `bold-${i}`),
+	        React.createElement('i', null, `italic-${i++}`),
+	        React.createElement(
+	          'div',
+	          { className: 'undeclared' },
+	          React.createElement(
+	            'div',
+	            { className: 'undeclared' },
+	            React.createElement(
+	              'div',
+	              { className: 'undeclared' },
+	              React.createElement(
+	                'div',
+	                { className: 'undeclared' },
+	                'div')))));
+	    }
+
+	    return React.createElement('div', { className: 'content' }, children);
+	  }
+	}
+
+	class Footer extends React.Component {
+	  render() {
+	    const childrenNum = this.props.childrenNum;
+	    const children = [];
+	    let i = 0;
+
+	    while(i < childrenNum) {
+	      children.push(React.createElement('div', { id: `footer-${i++}` }));
+	    }
+
+	    return React.createElement('div', { className : 'footer' }, children);
+	  }
+	}
+
+	module.exports = App;
+
+
+/***/ },
+/* 171 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	const React = __webpack_require__(164);
 	const ReactDom = __webpack_require__(1);
-	const provide = __webpack_require__(171);
+	const App = __webpack_require__(172);
+
+	module.exports = childrenNum => (deferred) => ReactDom.render(
+	  React.createElement(App, { childrenNum }),
+	  document.querySelector('.my-app'),
+	  () => { deferred.resolve() }
+	);
+
+
+/***/ },
+/* 172 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	const React = __webpack_require__(164);
+	const provide = __webpack_require__(173);
 
 	class App extends React.Component {
 	  render() {
@@ -20550,29 +20578,25 @@
 	  }
 	}
 
-	module.exports = childrenNum => (deferred) => ReactDom.render(
-	  React.createElement(App, { childrenNum }),
-	  document.querySelector('.my-app'),
-	  () => { deferred.resolve() }
-	);
+	module.exports = App;
 
 
 /***/ },
-/* 171 */
+/* 173 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	const React = __webpack_require__(164);
-	const reactXjst = __webpack_require__(172);
+	const reactXjst = __webpack_require__(174);
 
-	const ddsl = __webpack_require__(173);
+	const ddsl = __webpack_require__(175);
 
 	module.exports = reactXjst(ddsl, React);
 
 
 /***/ },
-/* 172 */
+/* 174 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -20647,7 +20671,7 @@
 
 
 /***/ },
-/* 173 */
+/* 175 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var require;var require;/// -------------------------------------
