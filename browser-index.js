@@ -1,15 +1,13 @@
 'use strict';
 
-const benchmark = require('benchmark');
-const cliff = require('cliff');
-const fs = require('fs');
+const ReactDom = require('react-dom');
+const suits = {
+  renderToDom: require('./renderToDom')
+};
 let results;
 
-const suits = {
-  renderToString: require('./renderToString')
-};
 Object.keys(suits).forEach(suitName => {
-  const suite = new benchmark.Suite(
+  const suite = new Benchmark.Suite(
     suitName,
     {
       onStart() {
@@ -18,10 +16,12 @@ Object.keys(suits).forEach(suitName => {
       },
 
       onComplete() {
-        console.log('\n' + cliff.stringifyObjectRows(
-          results.sort((resultA, resultB) => resultA.mean - resultB.mean),
-          ['', 'mean time', 'ops/sec'],
-          ['', 'green', 'yellow']) + '\n');
+        results.sort((resultA, resultB) => resultA.mean - resultB.mean).forEach((res) => {
+          console.log(res['']);
+          console.log('mean time: ', res['mean time']);
+          console.log('ops/sec: ', res['ops/sec']);
+          console.log('===');
+        });
       }
     });
   const test = suits[suitName];
@@ -34,6 +34,8 @@ Object.keys(suits).forEach(suitName => {
       testName,
       test[testName],
       {
+        defer: true,
+
         onStart() {
           console.log(`${name}`);
         },
@@ -53,5 +55,5 @@ Object.keys(suits).forEach(suitName => {
       });
   });
 
-  suite.run();
+  suite.run({ async: true });
 });
