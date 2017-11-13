@@ -3,6 +3,8 @@
     "bem-xjst": "8.8.4",
     "benchmark": "2.1.0",
     "cliff": "0.1.10",
+    "preact": "^8.2.6",
+    "preact-render-to-string": "^3.7.0",
     "react": "16.1.0",
     "react-dom": "16.1.0",
     "tlprt": "0.1.0",
