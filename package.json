@@ -9,7 +9,6 @@
     "preact-render-to-string": "3.7.0",
     "react": "16.1.0",
     "react-dom": "16.1.0",
-    "tlprt": "0.1.0",
     "vidom": "0.3.3"
   },
   "scripts": {

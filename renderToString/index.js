@@ -5,7 +5,7 @@ const join = require('path').join;
 
 const CHILDREN_NUM = 5000;
 const templates = fs.readFileSync(join(
-  process.cwd(), 'renderToString', 'react-xjst', 'templates', 'templates.bemhtml.js'),
+  process.cwd(), 'renderToString', 'templates.bemhtml.js'),
   'utf-8'
 );
 
